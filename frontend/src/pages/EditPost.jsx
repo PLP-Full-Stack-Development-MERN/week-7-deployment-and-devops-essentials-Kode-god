@@ -14,7 +14,7 @@ const EditPost = () => {
     const fetchPost = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get(`http://localhost:5000/api/posts/${id}`, {  // Fixed API endpoint
+        const response = await axios.get(`https://blog-platform-5alx.onrender.com/api/posts/${id}`, {  // Fixed API endpoint
           headers: { Authorization: `Bearer ${token}` }
         });
         const post = response.data;
@@ -33,7 +33,7 @@ const EditPost = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/posts/${id}`, {  // Fixed API endpoint
+      await axios.put(`https://mern-blog-platform-ku67.onrender.com/${id}`, {  
         title,
         content,
         tags: tags.split(',').map(tag => tag.trim())
