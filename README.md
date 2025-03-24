@@ -32,3 +32,5 @@ Notifications for failed builds
 Winston logging for backend
 Sentry for frontend error tracking
 Render dashboard for server metrics
+
+The deployment link is https://blog-platform-754f.vercel.app/
