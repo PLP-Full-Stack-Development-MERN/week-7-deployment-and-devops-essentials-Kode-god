@@ -1,0 +1,23 @@
+services:
+  - name: mern-blog-backend
+    type: web
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        fromDatabase:
+          name: mern-blog-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+
+databases:
+  - name: mern-blog-db
+    databaseName: blogdb
+    user: blog-admin
+    plan: free
